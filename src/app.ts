@@ -1,8 +1,13 @@
 import express,{Request, Response,NextFunction, Application, json} from 'express'
-import compression from "compression"
+import compression from 'compression'
+import {config as configureDotEnv} from 'dotenv'
 import setupRoutes from './routes';
 
 const app:Application = express();
+
+//Configure env variables
+configureDotEnv();
+
 app.use(json())
 app.use(compression())
 

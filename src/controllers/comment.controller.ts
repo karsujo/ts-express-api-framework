@@ -5,5 +5,5 @@ import {Request, Response} from "express";
  * @route GET /comments
  */
 export const getCommentsPage = async(req: Request, res:Response) => {
-
+  
 }
