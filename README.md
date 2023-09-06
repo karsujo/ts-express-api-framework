@@ -1,7 +1,7 @@
 # ts-express-api-framework
 
 #TODO
- - Add Formatter (Prettier)
+ X Add Formatter (Prettier)
  - Add Linter (ESLint)
  - Add Swagger
  - Add API validation checks (Joi?)
