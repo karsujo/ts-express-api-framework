@@ -1,18 +1,12 @@
 import IUser from "interfaces/user.interface"
-import sql from "../utils/db.util"
+import sql from "../infrastructure/db"
 
+export default class UserRepository{
 
- const getAllUsers = async():Promise<IUser[]> => {
-    const users  = await sql<IUser[]>`
-    select * from usr.Users
-    `
-    return users
+    async getAllUsers():Promise<IUser[]> {
+        const users  = await sql<IUser[]>`
+        select * from usr.Users
+        `
+        return users
+    }
 }
-
-
-const UserRepository = {
-    getAllUsers
-
-}
-
-export default UserRepository; 

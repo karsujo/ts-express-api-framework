@@ -1,5 +1,5 @@
 import postgres from "postgres";
-import logger from "./logger.util";
+import logger from "../logger/index";
 
 try{
     if(process.env.DATABASE_URL_DEV==null)

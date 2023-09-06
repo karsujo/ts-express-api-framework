@@ -1,14 +1,15 @@
 import Router from "express"
 import {Request,Response} from "express"
+import UserController from "controllers/user.controller";
 
 const route = Router();
 
-route.get('/users', (req : Request, res:Response)=>{
-       res.send("Comment[]"); 
-})
+const userController = new UserController(); 
+
+route.get('/users', userController.getAllUsers)
 
 route.get('/users/:id', (req : Request, res:Response)=>{
-    res.send("Comment[]"); 
+    //TODO
 })
 
 export default route; 
