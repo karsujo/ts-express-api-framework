@@ -5,6 +5,6 @@ import { IComment } from "interfaces/comment.interface";
  * get comments
  * @route GET /comments
  */
-export const getCommentsPage = async(req: Request, res:Response<IComment[]>) => {
+export const getCommentsPage = async(req: Request, res:Response) => {
   
 }
