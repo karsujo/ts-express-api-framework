@@ -4,7 +4,7 @@ import UserRepository from '../repositories/user.repository';
 import IUserRepository from 'interfaces/user.repository.interface';
 
 export default class UserController {
-   private _userRepository : IUserRepository;
+   private _userRepository: IUserRepository;
 
    constructor() {
       this._userRepository = new UserRepository();

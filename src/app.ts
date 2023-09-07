@@ -17,4 +17,5 @@ setupRoutes(app);
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
    res.send('Data');
 });
-app.listen(3030, () => console.log('listening'));
+
+export default app;

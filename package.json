@@ -6,11 +6,11 @@
     "type": "git",
     "url": "https://github.com/karsujo/ts-express-api-framework"
   },
-  "main": "app.ts",
+  "main": "server.ts",
   "scripts": {
-    "dev": "npm run format && nodemon ./src/app.ts",
+    "dev": "npm run format && nodemon ./src/server.ts",
     "build": "tsc",
-    "serve": "tsc && node ./dist/app.js",
+    "serve": "tsc && node ./dist/server.js",
     "start": "npm run serve",
     "format": "prettier --write \"src/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
