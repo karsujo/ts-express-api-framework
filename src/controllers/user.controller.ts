@@ -1,15 +1,13 @@
 import { Request, Response } from 'express';
 import IUser from 'interfaces/user.interface';
 import UserRepository from '../repositories/user.repository';
-import UserService from '../services/user.service';
+import IUserRepository from 'interfaces/user.repository.interface';
 
 export default class UserController {
-   private _userRepository;
-   private _userService;
+   private _userRepository : IUserRepository;
 
    constructor() {
       this._userRepository = new UserRepository();
-      this._userService = new UserService();
    }
 
    public async getAllUsers(req: Request, res: Response) {
