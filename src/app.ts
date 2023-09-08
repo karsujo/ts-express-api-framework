@@ -1,7 +1,7 @@
-import express, { Request, Response, NextFunction, Application, json } from 'express';
-import compression from 'compression';
-import { config as configureDotEnv } from 'dotenv';
-import setupRoutes from './routes';
+import express, { Request, Response, NextFunction, Application, json } from "express";
+import compression from "compression";
+import { config as configureDotEnv } from "dotenv";
+import setupRoutes from "./routes";
 
 const app: Application = express();
 
@@ -14,8 +14,8 @@ app.use(compression());
 //setup routers
 setupRoutes(app);
 
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
-   res.send('Data');
+app.get("/", (req: Request, res: Response, next: NextFunction) => {
+   res.send("Data");
 });
 
 export default app;

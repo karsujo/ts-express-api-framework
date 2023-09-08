@@ -1,4 +1,4 @@
-import IUser from 'interfaces/user.interface';
+import IUser from "interfaces/user.interface";
 export default class UserModel implements IUser {
    id: number;
    username: string;

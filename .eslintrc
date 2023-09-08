@@ -1,0 +1,36 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules":{
+
+        //Consistently terminate statements with semicolons
+        "semi": "off", // Disable the base rule to avoid conflicts with TypeScript version
+        "@typescript-eslint/semi": ["error"],
+
+        //consistenty use double-quotes
+        "quotes": ["error", "double"],
+       
+        //Avoid using the "any" type
+        "@typescript-eslint/no-explicit-any": "warn",
+
+        //Remove all unused vars
+        "@typescript-eslint/no-unused-vars": "warn",
+        "no-unused-vars": "off", // Disable the base rule to avoid conflicts with TypeScript version
+
+        //Best practices for ts
+
+        // Use const over let
+        "prefer-const": "error",
+
+        // Don't use var
+        "no-var": "error"
+    }
+  }

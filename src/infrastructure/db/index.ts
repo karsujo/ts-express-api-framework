@@ -1,9 +1,9 @@
-import postgres from 'postgres';
-import logger from '../logger/index';
+import postgres from "postgres";
+import logger from "../logger/index";
 
 try {
    if (process.env.DATABASE_URL_DEV == null) {
-      throw 'Unable to initialize database. Set the DATABASE_URL_DEV env';
+      throw "Unable to initialize database. Set the DATABASE_URL_DEV env";
    }
 } catch (e) {
    logger.error(e);

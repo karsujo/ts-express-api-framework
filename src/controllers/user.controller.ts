@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
-import IUser from 'interfaces/user.interface';
-import UserRepository from '../repositories/user.repository';
-import IUserRepository from 'interfaces/user.repository.interface';
+import { Request, Response } from "express";
+import IUser from "interfaces/user.interface";
+import UserRepository from "../repositories/user.repository";
+import IUserRepository from "interfaces/user.repository.interface";
 
 export default class UserController {
    private _userRepository: IUserRepository;
@@ -16,7 +16,7 @@ export default class UserController {
          const users: IUser[] = await this._userRepository.getAllUsers();
          return res.status(200).json(users);
       } catch (error) {
-         return res.status(500).json({ error: 'Error fetching users' });
+         return res.status(500).json({ error: "Error fetching users" });
       }
    }
 }
