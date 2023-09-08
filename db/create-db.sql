@@ -2,7 +2,7 @@
 
 -- DROP DATABASE IF EXISTS admisight;
 
-CREATE DATABASE admisight
+CREATE DATABASE proj_db
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
