@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import IUser from "interfaces/user.interface";
+import IUser from "../interfaces/user.interface";
 import UserRepository from "../repositories/user.repository";
-import IUserRepository from "interfaces/user.repository.interface";
+import IUserRepository from "../interfaces/user.repository.interface";
 
 export default class UserController {
    private _userRepository: IUserRepository;
