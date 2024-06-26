@@ -1,15 +1,27 @@
-import postgres from "postgres";
-import logger from "../logger/index";
+import * as mysql from "mysql2/promise";
+import dotenv from "dotenv";
 
-try {
-   if (process.env.DATABASE_URL_DEV == null) {
-      throw "Unable to initialize database. Set the DATABASE_URL_DEV env";
-   }
-} catch (e) {
-   logger.error(e);
-   console.log(e);
+// Database configuration
+// Get the database parameters from the environment variables
+const environment = process.env.NODE_ENV || "dev";
+let path;
+if (environment === "prod") {
+   path = ".env";
+} else {
+   path = `.${environment}.env`;
 }
+console.log(`Getting database parameters from ${path}`);
 
-const connectionString: string = process.env.DATABASE_URL_DEV!; //assert non-null
-const sql = postgres(connectionString);
-export default sql;
+dotenv.config({ path: path });
+
+const dbConfig = {
+   host: process.env.DB_HOSTNAME,
+   user: process.env.DB_USERNAME,
+   password: process.env.DB_PASSWORD,
+   database: process.env.DB_NAME,
+   port: Number(process.env.DB_PORT) || 3306,
+};
+
+const connectionPool = mysql.createPool(dbConfig);
+
+export default connectionPool;
