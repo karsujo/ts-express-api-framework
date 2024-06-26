@@ -2,12 +2,13 @@ import { ResultSetHeader, RowDataPacket } from "mysql2";
 import connectionPool from "../infrastructure/db";
 import { RowCount, TotalRecords } from "src/interfaces/base.interface";
 
+type RowDataCompatible<T> = T extends RowDataPacket ? T : RowDataPacket;
 
 export default class RepositoryBase {
-   async executeQuery<T extends RowDataPacket>(query: string, values?: any[]): Promise<T[]> {
+   async executeQuery<T>(query: string, values?: any[]): Promise<RowDataCompatible<T>[]> {
       const connection = await connectionPool.getConnection();
       try {
-         const [rows] = await connection.query<T[]>(query, values);
+         const [rows] = await connection.query<RowDataCompatible<T>[]>(query, values);
          return rows;
       } finally {
          connection.release();
